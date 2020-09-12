@@ -147,7 +147,6 @@ only screen and (                min-resolution: 2dppx) {
 .address-link::before,
 .tel-links::before,
 .open-dates::before,
-.header-item-active::before,
 .header-ask-question-link::before {
   display: inline-block;
   width: 14px;
@@ -173,6 +172,17 @@ only screen and (                min-resolution: 2dppx) {
 .tel-link {
   color: #333333;
   text-decoration: none;
+  transition: color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.tel-link:hover {
+  color: #FFBD54;
+}
+
+.tel-link:active {
+  color: #333333;
+  opacity: 0.5;
 }
 
 .tel-link:not(:last-child)::after {
@@ -207,8 +217,6 @@ only screen and (                min-resolution: 2dppx) {
 
 .header-part {
   background-color: #fff;
-  padding-top: 15px;
-  padding-bottom: 20px;
 }
 
 .header-part-wrapper {
@@ -220,6 +228,18 @@ only screen and (                min-resolution: 2dppx) {
   padding-left: 200px;
   font-size: 16px;
   line-height: 21px;
+}
+
+.header-logo-link {
+  transition: opacity 0.3s ease;
+}
+
+.header-logo-link:hover {
+  opacity: 0.8;
+}
+
+.header-logo-link:active {
+  opacity: 0.5;
 }
 
 .header-logo {
@@ -237,27 +257,39 @@ only screen and (                min-resolution: 2dppx) {
   list-style-type: none;
   display: flex;
   align-items: center;
+  text-align-last: left;
   flex-wrap: wrap;
   margin-left: 15px;
-  margin-right: 163px;
+  margin-right: 120px;
 }
 
-.header-item:not(:last-child) {
-  margin-right: 55px;
-}
-
-.header-item-active::before {
-  width: 15px;
-  height: 15px;
-  margin-right: 12px;
+.header-item-active {
   background-image: url("../img/fish-icon.svg");
-  vertical-align: middle;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center left;
 }
 
 .header-link,
 .header-ask-question-link {
+  display: inline-block;
+  vertical-align: baseline;
+  padding: 19px 27px;
   color: #333333;
   text-decoration: none;
+}
+
+.header-link {
+  transition: background-color 0.3s ease,
+  opacity 0.3s ease;
+}
+
+.header-link:active {
+  opacity: 0.5;
+}
+
+.header-link:hover {
+  background-color: #FFBD54;
 }
 
 .header-ask-question-link::before {
@@ -266,6 +298,21 @@ only screen and (                min-resolution: 2dppx) {
   margin-right: 5px;
   background-image: url("../img/pet.svg");
   vertical-align: middle;
+}
+
+.header-ask-question-link {
+  transition: background-color 0.3s ease,
+    color 0.3s ease,
+      opacity 0.3s ease;
+}
+
+.header-ask-question-link:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.header-ask-question-link:active {
+  opacity: 0.5;
 }
 
 /* Main */
@@ -326,6 +373,18 @@ only screen and (                min-resolution: 2dppx) {
 .button-black {
   background-color: #333333;
   color: #ffffff;
+  transition: background-color 0.3s ease,
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.button-black:hover {
+  background-color: #FFBD54;
+  color: #333333;
+}
+
+.button-black:active {
+  opacity: 0.5;
 }
 
 .pet-care-link {
@@ -446,6 +505,20 @@ only screen and (                min-resolution: 2dppx) {
   margin-bottom: 0;
 }
 
+.our-services-slider-item {
+  border: 1px solid transparent;
+  transition: border 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.our-services-slider-item:hover {
+  border: 1px solid #F3F3F3;
+}
+
+.our-services-slider-item:active {
+  opacity: 0.5;
+}
+
 .our-services-slider-item:not(:last-child) {
   margin-right: 13px;
 }
@@ -458,6 +531,11 @@ only screen and (                min-resolution: 2dppx) {
   line-height: 22px;
   color: #333333;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.our-services-slider-item:hover .our-services-slider-link {
+  color: #FFBD54;
 }
 
 .our-services-slider-link::before {
@@ -512,6 +590,18 @@ only screen and (                min-resolution: 2dppx) {
   background-repeat: no-repeat;
   background-size: 14px 26px;
   background-position: center center;
+  transition: background-color 0.3s ease,
+    box-shadow 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider-button:active {
+  opacity: 0.5;
 }
 
 .slider-button-prev {
@@ -610,4 +700,14 @@ only screen and (                min-resolution: 2dppx) {
 .button-orange {
   background-color: #FFBD54;
   color: #ffffff;
+  transition: background-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.button-orange:hover {
+  background-color: #333333;
+}
+
+.button-orange:active {
+  opacity: 0.5;
 }
