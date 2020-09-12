@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Futura PT";
   src: url("../fonts/FuturaPT-Light.woff2") format("woff2"),
-      url("../fonts/FuturaPT-Light.woff") format("woff");
+  url("../fonts/FuturaPT-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 @font-face {
   font-family: "Futura PT Book";
   src: url("fonts/FuturaPT-Book.woff2") format("woff2"),
-      url("fonts/FuturaPT-Book.woff") format("woff");
+  url("fonts/FuturaPT-Book.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -19,7 +19,7 @@
 @font-face {
   font-family: "Futura PT";
   src: url("../fonts/FuturaPT-Medium.woff2") format("woff2"),
-      url("../fonts/FuturaPT-Medium.woff") format("woff");
+  url("../fonts/FuturaPT-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@
 @font-face {
   font-family: "Futura PT";
   src: url("../fonts/FuturaPT-Bold.woff2") format("woff2"),
-      url("../fonts/FuturaPT-Bold.woff") format("woff");
+  url("../fonts/FuturaPT-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -37,7 +37,7 @@
 @font-face {
   font-family: "Futura PT Extra";
   src: url("../fonts/FuturaPT-ExtraBold.woff2") format("woff2"),
-      url("../fonts/FuturaPT-ExtraBold.woff") format("woff");
+  url("../fonts/FuturaPT-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -46,7 +46,7 @@
 @font-face {
   font-family: "Futura PT";
   src: url("../fonts/FuturaPT-Heavy.woff2") format("woff2"),
-      url("../fonts/FuturaPT-Heavy.woff") format("woff");
+  url("../fonts/FuturaPT-Heavy.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -54,6 +54,8 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -66,6 +68,13 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Futura PT", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #F9F8F8;
+  color: #333333;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 img {
@@ -85,8 +94,520 @@ img {
 }
 
 .container {
-  padding-left: 24px;
-  padding-right: 24px;
+  max-width: 1350px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin-right: auto;
   margin-left: auto;
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+  .vetinary-clinic-main {
+    background-image: url("../img/background-image@2x.png");
+  }
+
+  .pet-care-section {
+    background-image: url("../img/pet@2x.png"), url("../img/pets@2x.png");
+  }
+}
+
+/* Header */
+
+.vetinary-clinic-header {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.social-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  font-size: 14px;
+  line-height: 18px;
+  padding-top: 11px;
+  padding-bottom: 9px;
+  padding-left: 100px;
+  margin-left: auto;
+  background-color: #F9F8F8;
+}
+
+.address-link {
+  font-style: normal;
+  margin-right: 106px;
+}
+
+.address-link::before,
+.tel-links::before,
+.open-dates::before,
+.header-item-active::before,
+.header-ask-question-link::before {
+  display: inline-block;
+  width: 14px;
+  height: 13px;
+  background-image: url("../img/home-icon.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 9px;
+  vertical-align: baseline;
+  content: "";
+}
+
+.tel-links {
+  margin-right: 98px;
+}
+
+.tel-links::before {
+  width: 13px;
+  background-image: url("../img/phone-icon.svg");
+}
+
+.tel-link {
+  color: #333333;
+  text-decoration: none;
+}
+
+.tel-link:not(:last-child)::after {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  margin-left: 9px;
+  margin-right: 9px;
+  border-radius: 50%;
+  background-color: #FFBD54;
+  content: "";
+}
+
+.open-dates {
+  display: flex;
+  align-items: center;
+}
+
+.open-dates::before {
+  height: 14px;
+  background-image: url("../img/schedule.svg");
+}
+
+.open-date {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.open-date:not(:last-child) {
+  margin-right: 17px;
+}
+
+.header-part {
+  background-color: #fff;
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+.header-part-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 200px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.header-logo {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 15px;
+  margin-right: 163px;
+}
+
+.header-item:not(:last-child) {
+  margin-right: 55px;
+}
+
+.header-item-active::before {
+  width: 15px;
+  height: 15px;
+  margin-right: 12px;
+  background-image: url("../img/fish-icon.svg");
+  vertical-align: middle;
+}
+
+.header-link,
+.header-ask-question-link {
+  color: #333333;
+  text-decoration: none;
+}
+
+.header-ask-question-link::before {
+  width: 23px;
+  height: 21px;
+  margin-right: 5px;
+  background-image: url("../img/pet.svg");
+  vertical-align: middle;
+}
+
+/* Main */
+
+.vetinary-clinic-main {
+  flex-grow: 1;
+  width: 100%;
+  height: auto;
+  background-image: url("../img/background-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* Pet care section */
+
+.pet-care-section {
+  background-image: url("../img/pet.png"), url("../img/pets.png");
+  background-position: right bottom -40px, left top -100px;
+  background-repeat: no-repeat;
+}
+
+.pet-care-section-wrapper {
+  max-width: 608px;
+  margin-left: auto;
+  padding-top: 146px;
+  padding-bottom: 290px;
+  margin-right: 37px;
+}
+
+.pet-care-heading {
+  margin-bottom: 29px;
+  font-size: 70px;
+  line-height: 64px;
+}
+
+.pet-care-heading span {
+  color: #78C0DE;
+}
+
+.pet-care-text {
+  max-width: 495px;
+  margin-top: 0;
+  margin-bottom: 37px;
+  line-height: 21px;
+  color: #949494;
+}
+
+.button {
+  display: inline-block;
+  vertical-align: baseline;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 21px;
+}
+
+.button-black {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.pet-care-link {
+  padding-left: 48px;
+  padding-right: 48px;
+}
+
+/* Blockquote section */
+
+.blockquote-section-wrapper {
+  position: relative;
+  z-index: 1;
+  max-width: 1134px;
+  margin-right: 60px;
+  margin-left: auto;
+  margin-bottom: 185px;
+  text-align: center;
+}
+
+.blockquote-section-wrapper::before,
+.blockquote-section-wrapper::after {
+  position: absolute;
+  z-index: 1;
+  display: inline-block;
+  width: 70px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  content: "";
+}
+
+.blockquote-section-wrapper::before {
+  top: -25px;
+  left: 55px;
+  background-image: url("../img/blockquote-left.svg");
+}
+
+.blockquote-section-wrapper::after {
+  bottom: 70px;
+  right: 36px;
+  background-image: url("../img/blockquote-right.svg");
+}
+
+.blockquote {
+  display: flex;
+  flex-direction: column;
+  max-width: 753px;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 26px;
+  color: #949494;
+}
+
+.blockquote::before,
+.blockquote::after {
+  width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 0;
+  border: 1px solid #dbdbdb;
+  background-color: #dbdbdb;
+  content: "";
+}
+
+.blockquote::before {
+  margin-bottom: 43px;
+}
+
+.blockquote::after {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.blockquote-owner {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0;
+}
+
+/* Our services */
+
+.section-heading {
+  text-align: center;
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 80px;
+}
+
+.our-services-slider {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.our-services-slider-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.our-services-slider-item {
+  flex-shrink: 0;
+  width: 193px;
+  padding: 33px;
+  background-color: #ffffff;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.slider-item-active {
+  height: 215px;
+  margin-bottom: 0;
+}
+
+.our-services-slider-item:not(:last-child) {
+  margin-right: 13px;
+}
+
+.our-services-slider-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  line-height: 22px;
+  color: #333333;
+  text-decoration: none;
+}
+
+.our-services-slider-link::before {
+  display: block;
+  height: 77px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-bottom: 22px;
+  content: "";
+}
+
+.our-services-slider-item:nth-child(1) .our-services-slider-link::before {
+  width: 54px;
+  background-image: url("../img/doctor.svg");
+}
+
+.our-services-slider-item:nth-child(2) .our-services-slider-link::before {
+  width: 61px;
+  background-image: url("../img/pet-nurse.svg");
+}
+
+.our-services-slider-item:nth-child(3) .our-services-slider-link::before {
+  width: 72px;
+  background-image: url("../img/pet-ill.svg");
+}
+
+.our-services-slider-item:nth-child(4) .our-services-slider-link::before {
+  width: 76px;
+  background-image: url("../img/dermatolog.svg");
+}
+
+.our-services-slider-item:nth-child(5) .our-services-slider-link::before {
+  width: 78px;
+  background-image: url("../img/laboratory.svg");
+}
+
+.our-services-slider-item:nth-child(6) .our-services-slider-link::before {
+  width: 76px;
+  background-image: url("../img/dogs.svg");
+}
+
+.slider-button {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: none;
+  background-repeat: no-repeat;
+  background-size: 14px 26px;
+  background-position: center center;
+}
+
+.slider-button-prev {
+  left: 0;
+  background-image: url("../img/arrow-left.svg");
+}
+
+.slider-button-next {
+  right: 0;
+  background-image: url("../img/arrow-right.svg");
+}
+
+/* Doctor section */
+
+.doctor-section {
+  margin-bottom: 127px;
+}
+
+.doctor-section-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 0px 5px 5px 5px;
+  padding: 42px 35px;
+}
+
+.doctor-section-wrapper::before {
+  display: inline-block;
+  vertical-align: middle;
+  width: 524px;
+  height: 329px;
+  background-image: url("../img/cat-doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  margin-right: 67px;
+  content: "";
+}
+
+.doctor-section-content {
+  max-width: 492px;
+}
+
+.doctor-section-heading {
+  font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.doctor-section-text {
+  margin-top: 0;
+}
+
+.doctor-section-text:nth-of-type(1) {
+  margin-bottom: 9px;
+}
+
+.doctor-section-text:nth-of-type(2) {
+  margin-bottom: 34px;
+}
+
+.doctor-section-links {
+  display: flex;
+}
+
+.doctor-section-link {
+  padding-left: 36px;
+  padding-right: 36px;
+  border-radius: 3px;
+}
+
+.doctor-section-link:nth-of-type(1) {
+  margin-right: 21px;
+}
+
+.doctor-section-link::before {
+  display: inline-block;
+  vertical-align: middle;
+  width: 21px;
+  height: 21px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 6px;
+  content: "";
+}
+
+.doctor-section-link:nth-of-type(1)::before {
+  background-image: url("../img/money.svg");
+}
+
+.doctor-section-link:nth-of-type(2)::before {
+  background-image: url("../img/document.svg");
+}
+
+.button-orange {
+  background-color: #FFBD54;
+  color: #ffffff;
 }
