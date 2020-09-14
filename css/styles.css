@@ -115,6 +115,22 @@ only screen and (                min-resolution: 2dppx) {
   .pet-care-section {
     background-image: url("../img/pet@2x.png"), url("../img/pets@2x.png");
   }
+
+  .address-link::before {
+    background-image: url("../img/home@2x.png");
+  }
+
+  .tel-links::before {
+    background-image: url("../img/phone@2x.png");
+  }
+
+  .open-dates::before {
+    background-image: url("../img/schedule@2x.png");
+  }
+
+  .header-item-active {
+    background-image: url("../img/active@2x.png");
+  }
 }
 
 /* Header */
@@ -151,7 +167,7 @@ only screen and (                min-resolution: 2dppx) {
   display: inline-block;
   width: 14px;
   height: 13px;
-  background-image: url("../img/home-icon.svg");
+  background-image: url("../img/home.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -166,7 +182,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .tel-links::before {
   width: 13px;
-  background-image: url("../img/phone-icon.svg");
+  background-image: url("../img/phone.png");
 }
 
 .tel-link {
@@ -204,7 +220,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .open-dates::before {
   height: 14px;
-  background-image: url("../img/schedule.svg");
+  background-image: url("../img/schedule.png");
 }
 
 .open-date {
@@ -265,7 +281,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .header-item-active {
-  background-image: url("../img/fish-icon.svg");
+  background-image: url("../img/active.png");
   background-size: 15px 15px;
   background-repeat: no-repeat;
   background-position: center left;
@@ -812,12 +828,14 @@ only screen and (                min-resolution: 2dppx) {
 .article-content {
   display: flex;
   flex-direction: column;
-  padding: 0 22px 36px;
+  padding-left: 22px;
+  padding-right: 22px;
 }
 
 .article-img {
   width: 305px;
   display: block;
+  height: 100%;
 }
 
 .article-date {
@@ -832,6 +850,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .article-text {
+  flex-grow: 1;
   margin-top: 0;
   margin-bottom: 35px;
   color: #949494;
@@ -842,7 +861,7 @@ only screen and (                min-resolution: 2dppx) {
   color: #333333;
   text-decoration: none;
   transition: color 0.3s ease,
-    opacity 0.3s ease;
+  opacity 0.3s ease;
 }
 
 .read-more-link:active {
@@ -855,6 +874,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .article:nth-of-type(2n+1) .article-img {
+  border-radius: 5px 5px 0px 0px;
   height: 180px;
   margin-bottom: 21px;
 }
@@ -878,6 +898,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .article:nth-of-type(2n) .article-img {
   height: 435px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .article:nth-of-type(2n) .article-content {
@@ -899,7 +920,12 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .hash-tag-link {
+  font-size: 14px;
+  line-height: 22px;
+  color: #3D9CEA;
+  text-decoration: none;
   transition: color 0.3s ease;
+  margin-right: 8px;
 }
 
 .hash-tag-link:hover,
@@ -908,4 +934,13 @@ only screen and (                min-resolution: 2dppx) {
 }
 .hash-tag-link:active {
   color: rgba(255, 189, 84, 0.5);
+}
+
+/* Footer */
+
+.vetinary-clinic-footer {
+  background-color: #F3F3F3;
+  border: 1px solid #EBEBEB;
+  padding-top: 54px;
+  padding-bottom: 23px;
 }
