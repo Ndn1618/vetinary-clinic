@@ -170,6 +170,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .tel-link {
+  white-space: nowrap;
   color: #333333;
   text-decoration: none;
   transition: color 0.3s ease,
@@ -292,12 +293,18 @@ only screen and (                min-resolution: 2dppx) {
   background-color: #FFBD54;
 }
 
-.header-ask-question-link::before {
+.header-ask-question-link::before,
+.read-more-link::before {
+  display: inline-block;
   width: 23px;
   height: 21px;
   margin-right: 5px;
   background-image: url("../img/pet.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
   vertical-align: middle;
+  content: "";
 }
 
 .header-ask-question-link {
@@ -617,7 +624,7 @@ only screen and (                min-resolution: 2dppx) {
 /* Doctor section */
 
 .doctor-section {
-  margin-bottom: 127px;
+  margin-bottom: 77px;
 }
 
 .doctor-section-wrapper {
@@ -716,24 +723,19 @@ only screen and (                min-resolution: 2dppx) {
 /* Be on course section */
 
 .be-on-course {
-  background-image: url("../img/blue-background.png");
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-image: url("../img/dog-with-blue-background.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
-  margin-bottom: 151px;
+  background-repeat: no-repeat;
+  margin-bottom: 101px;
 }
 
-.be-on-coure-wrapper {
-  position: relative;
-  z-index: 1;
+.be-on-course-wrapper {
   padding-top: 90px;
   padding-bottom: 88px;
   padding-left: 222px;
-}
-
-.be-on-coure-wrapper::after {
-  position: absolute;
-  z-index: 1;
 }
 
 .be-on-course-heading {
@@ -756,16 +758,154 @@ only screen and (                min-resolution: 2dppx) {
   text-overflow: ellipsis;
   border-radius: 5px;
   background-color: #fff;
-  border: none;
+  border: 1px solid transparent;
   margin-right: 21px;
 }
 
-.be-on-course-input::placeholder {
+.input:valid {
+  border: 1px solid #00B031;
+  color: #00B031;
+}
+
+.input:invalid {
+  border: 1px solid #D81D04;
+  color: #D81D04;
+}
+
+.input::placeholder {
   color: #949494;
+}
+
+.input:valid::placeholder {
+  color: #00B031;
+}
+
+.input:invalid::placeholder {
+  color: #D81D04;
 }
 
 .be-on-course-btn {
   border: none;
   padding-left: 51px;
   padding-right: 51px;
+}
+
+/* Articles section */
+
+.articles  {
+  padding-bottom: 153px;
+  margin-bottom: 109px;
+}
+
+.articles-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.article {
+  display: flex;
+  border: 1px solid #E4E4E2;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 22px 36px;
+}
+
+.article-img {
+  width: 305px;
+  display: block;
+}
+
+.article-date {
+  font-size: 14px;
+  line-height: 18px;
+  color: #949494;
+  text-align: right;
+}
+
+.article-heading {
+  margin-top: 0;
+}
+
+.article-text {
+  margin-top: 0;
+  margin-bottom: 35px;
+  color: #949494;
+}
+
+.read-more-link {
+  line-height: 21px;
+  color: #333333;
+  text-decoration: none;
+  transition: color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.read-more-link:active {
+  opacity: 0.5;
+}
+
+.article:nth-of-type(2n+1) {
+  width: 305px;
+  flex-direction: column;
+}
+
+.article:nth-of-type(2n+1) .article-img {
+  height: 180px;
+  margin-bottom: 21px;
+}
+
+.article:nth-of-type(2n+1) .article-date {
+  margin-bottom: 2px;
+}
+
+.article:nth-of-type(2n+1) .article-heading {
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.article:nth-of-type(2n) {
+  width: 640px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.article:nth-of-type(2n) .article-img {
+  height: 435px;
+}
+
+.article:nth-of-type(2n) .article-content {
+  padding: 41px 32px 36px;
+}
+
+.article:nth-of-type(2n) .article-heading {
+  margin-bottom: 15px;
+  font-size: 26px;
+  line-height: 29px;
+}
+
+.hash-tag-time-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 29px;
+}
+
+.hash-tag-link {
+  transition: color 0.3s ease;
+}
+
+.hash-tag-link:hover,
+.read-more-link:hover {
+  color: #FFBD54
+}
+.hash-tag-link:active {
+  color: rgba(255, 189, 84, 0.5);
 }
