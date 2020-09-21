@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vetinary clinic</title>
-  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
-  <!-- <link rel="stylesheet" href="css/styles.css"> -->
-  <link rel="stylesheet" href="css/styles.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- <link rel="stylesheet" href="css/styles.min.css"> -->
 </head>
 <body>
   <header class="vetinary-clinic-header">
@@ -204,14 +204,65 @@
         </div>
       </div>
     </section>
+
+    <section class="connection">
+      <div class="connection-wrapper">
+        <a class="connection-address" href="https://yandex.uz/maps/-/CCQxfRCHTB" target="_blank">
+          <img class="connection-address-img" src="img/map.png" alt="Vetinary clinic address" width="462" height="652">
+        </a>
+        <div class="connection-content">
+          <div class="connection-content-wrapper">
+            <h2 class="connection-heading">Обратная связь</h2>
+            <p class="connection-text">При возникновении вопросов по поводу работы клиники или консультаций, заполните форму ниже:</p>
+
+            <form class="connection-form" action="https://echo.htmlacademy.ru" method="POST">
+              <input class="text-input" type="text" name="name" aria-label="name-input" placeholder="Ваше имя" required>
+              <input class="email-input" type="email" name="email" aria-label="emial-input" placeholder="Email для обратной связи" required>
+              <textarea class="connection-form-textarea" name="question" minlength="3" placeholder="Опишите Ваш вопрос. Например: в каком возрасте можно прививать от бешенства?" required></textarea>
+              <button class="button button-orange">Задать нам вопрос</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="vetinary-clinic-footer">
     <div class="container">
       <div class="vetinary-clinic-footer-wrapper">
         <a href="index.html">
-          <img src="img/logo.svg" alt="Vetinary clinic logo" width="158" height="77">
+          <img class="footer-logo" src="img/logo.svg" alt="Vetinary clinic logo" width="158" height="77">
         </a>
+        <ul class="footer-list">
+          <li class="footer-item">
+            <a class="footer-link" href="index.html">Главная</a>
+          </li>
+          <li class="footer-item">
+            <a class="footer-link" href="about-clinic.html">О Клинике</a>
+          </li>
+          <li class="footer-item">
+            <a class="footer-link" href="our-services.html">Наши Услуги</a>
+          </li>
+          <li class="footer-item">
+            <a class="footer-link" href="beneficial-stats.html">Полезные Статьи</a>
+          </li>
+          <li class="footer-item">
+            <a class="footer-link" href="faq.html">FAQ</a>
+          </li>
+          <li class="footer-item">
+            <a class="footer-link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+        <div class="open-dates">
+          <p class="open-date">Пн - Пт 8:00 - 18:00</p>
+          <p class="open-date">Сб - Вс 8:00 - 14:00</p>
+        </div>
+        <address class="address-link">г. Мариуполь, проспект Победы, 48а</address>
+        <span class="footer-tel-links">
+          <a  class="footer-tel-link" href="tel:0676347574">(067) 634 -75 - 74</a>
+          <a  class="footer-tel-link" href="tel:0676347574">(0637) 57 - 01 - 31</a>
+          <a  class="footer-tel-link" href="tel:0676347574">(098) 266 - 43 - 89</a>
+        </span>
       </div>
     </div>
   </footer>

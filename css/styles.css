@@ -180,12 +180,14 @@ only screen and (                min-resolution: 2dppx) {
   margin-right: 98px;
 }
 
-.tel-links::before {
+.tel-links::before,
+.footer-tel-links::before {
   width: 13px;
   background-image: url("../img/phone.png");
 }
 
-.tel-link {
+.tel-link,
+.footer-tel-link {
   white-space: nowrap;
   color: #333333;
   text-decoration: none;
@@ -219,8 +221,10 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .open-dates::before {
-  height: 14px;
+  width: 16px;
+  height: 16px;
   background-image: url("../img/schedule.png");
+  content: "";
 }
 
 .open-date {
@@ -268,7 +272,8 @@ only screen and (                min-resolution: 2dppx) {
   transform: translateY(-50%);
 }
 
-.header-list {
+.header-list,
+.footer-list {
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -288,7 +293,8 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .header-link,
-.header-ask-question-link {
+.header-ask-question-link,
+.footer-link {
   display: inline-block;
   vertical-align: baseline;
   padding: 19px 27px;
@@ -640,7 +646,7 @@ only screen and (                min-resolution: 2dppx) {
 /* Doctor section */
 
 .doctor-section {
-  margin-bottom: 77px;
+  margin-bottom: 27px;
 }
 
 .doctor-section-wrapper {
@@ -739,13 +745,13 @@ only screen and (                min-resolution: 2dppx) {
 /* Be on course section */
 
 .be-on-course {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 100px;
+  padding-bottom: 120px;
   background-image: url("../img/dog-with-blue-background.jpg");
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  margin-bottom: 101px;
+  margin-bottom: 31px;
 }
 
 .be-on-course-wrapper {
@@ -783,7 +789,7 @@ only screen and (                min-resolution: 2dppx) {
   color: #00B031;
 }
 
-.input:invalid {
+.input:not(:placeholder-shown):invalid {
   border: 1px solid #D81D04;
   color: #D81D04;
 }
@@ -794,10 +800,6 @@ only screen and (                min-resolution: 2dppx) {
 
 .input:valid::placeholder {
   color: #00B031;
-}
-
-.input:invalid::placeholder {
-  color: #D81D04;
 }
 
 .be-on-course-btn {
@@ -822,20 +824,22 @@ only screen and (                min-resolution: 2dppx) {
   display: flex;
   border: 1px solid #E4E4E2;
   border-radius: 5px;
-  background-color: #fff;
 }
 
 .article-content {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   padding-left: 22px;
   padding-right: 22px;
+  padding-bottom: 36px;
+  background-color: #fff;
 }
 
 .article-img {
   width: 305px;
   display: block;
-  height: 100%;
+  object-fit: cover;
 }
 
 .article-date {
@@ -857,6 +861,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .read-more-link {
+  margin-top: auto;
   line-height: 21px;
   color: #333333;
   text-decoration: none;
@@ -897,7 +902,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .article:nth-of-type(2n) .article-img {
-  height: 435px;
+  height: 100%;
   border-radius: 5px 0px 0px 5px;
 }
 
@@ -936,6 +941,92 @@ only screen and (                min-resolution: 2dppx) {
   color: rgba(255, 189, 84, 0.5);
 }
 
+/* Connection section */
+
+.connection {
+  margin-bottom: 247px;
+}
+
+.connection-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connection-address {
+  width: 462px;
+  flex-shrink: 0;
+}
+
+.connection-address-img {
+  display: block;
+  width: 462px;
+  height: 652px;
+}
+
+.connection-content {
+  width: calc(100% - 462px);
+  padding: 62px 0 74px 165px;
+  background-image: url("../img/fish-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.connection-content-wrapper {
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+.connection-form {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  line-height: 21px;
+}
+
+.connection-heading {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 48px;
+  line-height: 62px;
+}
+
+.connection-text {
+  color: #949494;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.connection-form input {
+  padding: 15px 22px;
+  margin-bottom: 14px;
+}
+
+.connection-form-textarea {
+  resize: vertical;
+  min-height: 165px;
+  padding: 17px 22px;
+  margin-bottom: 30px;
+}
+
+.connection-form input::placeholder,
+.connection-form-textarea::placeholder {
+  color: #949494;
+  line-height: 21px;
+}
+
+.connection-form .button {
+  padding-left: 50px;
+  padding-right: 50px;
+  align-self: start;
+  border: none;
+}
+
 /* Footer */
 
 .vetinary-clinic-footer {
@@ -943,4 +1034,75 @@ only screen and (                min-resolution: 2dppx) {
   border: 1px solid #EBEBEB;
   padding-top: 54px;
   padding-bottom: 23px;
+}
+
+.vetinary-clinic-footer-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.footer-logo {
+  display: inline-block;
+  vertical-align: middle;
+  width: 158px;
+  height: 77px;
+}
+
+.footer-list {
+  justify-content: space-between;
+  max-width: 288px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.footer-item {
+  width: 130px;
+  margin-bottom: 16px;
+}
+
+.footer-link {
+  padding: 0;
+}
+
+.vetinary-clinic-footer-wrapper .open-dates {
+  max-width: 176px;
+  flex-wrap: wrap;
+}
+
+.vetinary-clinic-footer-wrapper .open-date:last-child {
+  margin-left: 25px;
+}
+
+.vetinary-clinic-footer-wrapper .address-link {
+  display: flex;
+  max-width: 180px;
+  margin-right: 0;
+}
+
+.vetinary-clinic-footer-wrapper .address-link::before {
+  display: block;
+  width: 31px;
+  height: 16px;
+}
+
+.footer-tel-links {
+  max-width: 147px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-tel-links::before {
+  display: block;
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-repeat: no-repeat;
+  margin-right: 9px;
+}
+
+.footer-tel-link:not(:first-child) {
+  margin-left: 25px;
 }
