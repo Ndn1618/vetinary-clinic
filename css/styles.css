@@ -127,10 +127,6 @@ only screen and (                min-resolution: 2dppx) {
   .open-dates::before {
     background-image: url("../img/schedule@2x.png");
   }
-
-  .header-item-active {
-    background-image: url("../img/active@2x.png");
-  }
 }
 
 /* Header */
@@ -285,11 +281,28 @@ only screen and (                min-resolution: 2dppx) {
   margin-right: 120px;
 }
 
+.header-list {
+  justify-content: center;
+}
+
 .header-item-active {
+  position: relative;
+  z-index: 1;
+}
+
+.header-item-active::before {
+  position: absolute;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 6px;
+  transform: translateY(-50%);
   background-image: url("../img/active.png");
-  background-size: 15px 15px;
   background-repeat: no-repeat;
-  background-position: center left;
+  background-size: contain;
+  background-position: center center;
+  content: "";
 }
 
 .header-link,
@@ -342,6 +355,109 @@ only screen and (                min-resolution: 2dppx) {
 
 .header-ask-question-link:active {
   opacity: 0.5;
+}
+
+@media only screen and (max-width: 1292px) {
+  .social-links-wrapper,
+  .header-part-wrapper {
+    padding-left: 0;
+    justify-content: space-between;
+  }
+
+  .address-link,
+  .tel-links,
+  .open-date:not(:last-child),
+  .header-list {
+    margin-right: 15px;
+  }
+
+  .header-item-active::before {
+    left: 0;
+  }
+
+  .header-link,
+  .header-ask-question-link {
+    padding: 15px 18px;
+  }
+
+  .header-logo-link {
+    margin-right: 69px;
+  }
+
+  .header-logo {
+    width: auto;
+    height: 45px;
+    position: static;
+    transform: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .header-ask-question-link {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .header-ask-question-link {
+    position: relative;
+    z-index: 1;
+    padding-left: 25px;
+  }
+
+  .header-ask-question-link::before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+}
+
+@media only screen and (max-width: 996px) {
+  .social-links-wrapper {
+    justify-content: inherit;
+  }
+
+  .address-link {
+    margin-right: 100px;
+  }
+
+  .header-logo-link {
+    margin-right: 35px;
+  }
+
+  .header-link {
+    padding: 10px;
+  }
+
+  .header-item-active .header-link {
+    padding-left: 20px;
+  }
+
+  .header-ask-question-link {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .header-logo {
+    width: 91px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .address-link {
+    margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .tel-links {
+    margin-right: 50px;
+  }
 }
 
 /* Main */
@@ -605,6 +721,36 @@ only screen and (                min-resolution: 2dppx) {
 .our-services-slider-item:nth-child(6) .our-services-slider-link::before {
   width: 76px;
   background-image: url("../img/dogs.svg");
+}
+
+.our-services-slider-item:nth-child(7) .our-services-slider-link::before {
+  width: 77px;
+  background-image: url("../img/uzi-diagnostics.svg");
+}
+
+.our-services-slider-item:nth-child(8) .our-services-slider-link::before {
+  width: 40px;
+  background-image: url("../img/injection.svg");
+}
+
+.our-services-slider-item:nth-child(9) .our-services-slider-link::before {
+  width: 86px;
+  background-image: url("../img/international-passport.svg");
+}
+
+.our-services-slider-item:nth-child(10) .our-services-slider-link::before {
+  width: 68px;
+  background-image: url("../img/vacancies.svg");
+}
+
+.our-services-slider-item:nth-child(11) .our-services-slider-link::before {
+  width: 78px;
+  background-image: url("../img/teeth-injection.svg");
+}
+
+.our-services-slider-item:nth-child(7) .our-services-slider-link::before {
+  width: 77px;
+  background-image: url("../img/med-box.svg");
 }
 
 .slider-button {
