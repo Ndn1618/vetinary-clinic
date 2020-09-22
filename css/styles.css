@@ -1573,5 +1573,8 @@ only screen and (                min-resolution: 2dppx) {
 
   .services__learn-more-btn {
     padding: 10px 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
