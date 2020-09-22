@@ -260,6 +260,8 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .header-logo {
+  width: 178px;
+  height: 86px;
   display: block;
   position: absolute;
   z-index: 1;
@@ -385,8 +387,8 @@ only screen and (                min-resolution: 2dppx) {
   }
 
   .header-logo {
-    width: auto;
-    height: 45px;
+    width: 80px;
+    height: auto;
     position: static;
     transform: none;
   }
@@ -442,12 +444,6 @@ only screen and (                min-resolution: 2dppx) {
   }
 }
 
-@media only screen and (max-width: 860px) {
-  .header-logo {
-    width: 91px;
-  }
-}
-
 @media only screen and (max-width: 800px) {
   .address-link {
     margin-right: 50px;
@@ -457,6 +453,66 @@ only screen and (                min-resolution: 2dppx) {
 @media only screen and (max-width: 750px) {
   .tel-links {
     margin-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 494px) {
+  .tel-links {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .header-logo-link {
+    margin-right: 10px;
+  }
+
+  .header-logo {
+    width: 180px;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 484px) {
+  .tel-links {
+    position: relative;
+    z-index: 1;
+    padding-left: 22px;
+  }
+
+  .tel-links::before {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 7px;
+    transform: translateY(-50%);
+  }
+}
+
+@media only screen and (max-width: 342px) {
+  .header-link,
+  .header-ask-question-link,
+  .address-link,
+  .tel-links,
+  .open-dates {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  .tel-links {
+    margin-right: 0;
+    padding-left: 30px;
+  }
+
+  .tel-link {
+    margin-right: 50px;
+  }
+
+  .header-item-active .header-link {
+    padding-left: 20px;
+  }
+
+  .header-ask-question-link::before {
+    left: -17px;
   }
 }
 
