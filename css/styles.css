@@ -952,17 +952,20 @@ only screen and (                min-resolution: 2dppx) {
   display: flex;
 }
 
-.doctor-section-link {
+.doctor-section-link,
+.service-open__link {
   padding-left: 36px;
   padding-right: 36px;
   border-radius: 3px;
 }
 
-.doctor-section-link:nth-of-type(1) {
+.doctor-section-link:nth-of-type(1),
+.service-open__link:nth-of-type(1) {
   margin-right: 21px;
 }
 
-.doctor-section-link::before {
+.doctor-section-link::before,
+.service-open__link::before {
   display: inline-block;
   vertical-align: middle;
   width: 21px;
@@ -974,11 +977,13 @@ only screen and (                min-resolution: 2dppx) {
   content: "";
 }
 
-.doctor-section-link:nth-of-type(1)::before {
+.doctor-section-link:nth-of-type(1)::before,
+.service-open__link:nth-of-type(1)::before {
   background-image: url("../img/money.svg");
 }
 
-.doctor-section-link:nth-of-type(2)::before {
+.doctor-section-link:nth-of-type(2)::before,
+.service-open__link:nth-of-type(2)::before {
   background-image: url("../img/document.svg");
 }
 
@@ -1071,45 +1076,71 @@ only screen and (                min-resolution: 2dppx) {
   margin-bottom: 109px;
 }
 
-.articles-wrapper {
+.articles__heading {
+  text-align: center;
+}
+
+.articles__wrapper {
+  overflow: hidden;
   display: flex;
-  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 .article {
+  width: 305px;
   display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
   border: 1px solid #E4E4E2;
   border-radius: 5px;
+  background-color: #fff;
 }
 
-.article-content {
+.article:not(:last-of-type) {
+  margin-right: 24px;
+}
+
+.article__content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   padding-left: 22px;
   padding-right: 22px;
   padding-bottom: 36px;
-  background-color: #fff;
 }
 
-.article-img {
+.article__date {
+  margin-bottom: 2px;
+}
+
+.article__heading {
+  margin-bottom: 10px;
+  font-size: 22px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.article__img {
   width: 305px;
+  height: 180px;
   display: block;
   object-fit: cover;
+  border-radius: 5px 5px 0px 0px;
+  margin-bottom: 21px;
 }
 
-.article-date {
+.article__date {
   font-size: 14px;
   line-height: 18px;
   color: #949494;
   text-align: right;
 }
 
-.article-heading {
+.article__heading {
   margin-top: 0;
 }
 
-.article-text {
+.article__text {
   flex-grow: 1;
   margin-top: 0;
   margin-bottom: 35px;
@@ -1117,6 +1148,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .read-more-link {
+  align-self: flex-start;
   margin-top: auto;
   line-height: 21px;
   color: #333333;
@@ -1125,59 +1157,42 @@ only screen and (                min-resolution: 2dppx) {
   opacity 0.3s ease;
 }
 
+.read-more-link::before {
+  display: inline-block;
+  width: 23px;
+  height: 21px;
+  margin-right: 5px;
+  background-image: url("../img/pet.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  vertical-align: middle;
+  content: "";
+}
+
 .read-more-link:active {
   opacity: 0.5;
 }
 
-.article:nth-of-type(2n+1) {
-  width: 305px;
-  flex-direction: column;
-}
-
-.article:nth-of-type(2n+1) .article-img {
-  border-radius: 5px 5px 0px 0px;
-  height: 180px;
-  margin-bottom: 21px;
-}
-
-.article:nth-of-type(2n+1) .article-date {
-  margin-bottom: 2px;
-}
-
-.article:nth-of-type(2n+1) .article-heading {
-  margin-bottom: 10px;
-  font-size: 22px;
-  line-height: 25px;
-  color: #000000;
-}
-
-.article:nth-of-type(2n) {
-  width: 640px;
-  margin-left: 24px;
-  margin-right: 24px;
-}
-
-.article:nth-of-type(2n) .article-img {
-  height: 100%;
-  border-radius: 5px 0px 0px 5px;
-}
-
-.article:nth-of-type(2n) .article-content {
-  padding: 41px 32px 36px;
-}
-
-.article:nth-of-type(2n) .article-heading {
-  margin-bottom: 15px;
-  font-size: 26px;
-  line-height: 29px;
-}
-
 .hash-tag-time-wrapper {
   display: flex;
+  margin-left: auto;
+}
+
+.article--active .hash-tag-time-wrapper {
+  margin-left: 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 29px;
+}
+
+.hash-tag-links {
+  display: none;
+}
+
+.article--active .hash-tag-links {
+  display: flex;
 }
 
 .hash-tag-link {
@@ -1197,6 +1212,64 @@ only screen and (                min-resolution: 2dppx) {
   color: rgba(255, 189, 84, 0.5);
 }
 
+.article--active {
+  width: 640px;
+  display: flex;
+  flex-direction: row;
+}
+
+.article--active .article__img {
+  height: 100%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.article--active .article__content {
+  padding: 41px 32px 36px;
+}
+
+.article--active .article__heading {
+  margin-bottom: 15px;
+  font-size: 26px;
+  line-height: 29px;
+}
+
+.slider-button {
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: none;
+  background-repeat: no-repeat;
+  background-size: 14px 26px;
+  background-position: center center;
+  transition: background-color 0.3s ease,
+  box-shadow 0.3s ease,
+  opacity 0.3s ease;
+}
+
+.slider-button:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider-button:active {
+  opacity: 0.5;
+}
+
+.slider-button-prev {
+  margin-right: 15px;
+  background-image: url("../img/arrow-left.svg");
+}
+
+.slider-button-next {
+  margin-left: 15px;
+  background-image: url("../img/arrow-right.svg");
+}
+
+.article__slider-counter {
+  margin-left: 50px;
+  font-size: 30px;
+}
+
 /* Connection section */
 
 .connection {
@@ -1205,8 +1278,7 @@ only screen and (                min-resolution: 2dppx) {
 
 .connection-wrapper {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
 }
 
 .connection-address {
@@ -1500,6 +1572,7 @@ only screen and (                min-resolution: 2dppx) {
   background-size: 108px 94px;
   background-repeat: no-repeat;
   background-position: top right;
+  border-radius: 5px 5px 0px 0px;
   transition: filter 0.2s ease;
 }
 
@@ -1529,6 +1602,9 @@ only screen and (                min-resolution: 2dppx) {
   padding-right: 30px;
   border-radius: 3px;
   color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: background-color 0.3s ease;
 }
 
@@ -1573,8 +1649,5 @@ only screen and (                min-resolution: 2dppx) {
 
   .services__learn-more-btn {
     padding: 10px 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
