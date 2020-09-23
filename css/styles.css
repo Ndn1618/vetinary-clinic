@@ -1,3 +1,8 @@
+:root {
+  --text-color: #333;
+  --main-color: #ffbd54;
+}
+
 @font-face {
   font-family: "Futura PT";
   src: url("../fonts/FuturaPT-Light.woff2") format("woff2"),
@@ -9,8 +14,8 @@
 
 @font-face {
   font-family: "Futura PT";
-  src: url("fonts/FuturaPT-Book.woff2") format("woff2"),
-  url("fonts/FuturaPT-Book.woff") format("woff");
+  src: url("../fonts/FuturaPT-Book.woff2") format("woff2"),
+  url("../fonts/FuturaPT-Book.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -130,6 +135,145 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 /* Header */
+
+.company-address {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+.company-address::before {
+  width: 14px;
+  height: 13px;
+  margin-right: 9px;
+  background-image: url("../img/home.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  content: "";
+}
+
+.phones {
+  display: flex;
+}
+
+.phones--align-center {
+  align-items: center;
+}
+
+.phones::before {
+  width: 13px;
+  height: 13px;
+  margin-right: 9px;
+  background-image: url("../img/phone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  content: "";
+}
+
+.phones__list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.phones__list--row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.phones__item {
+  position: relative;
+  z-index: 1;
+}
+
+.phones__list--row .phones__item + .phones__item {
+  margin-left: 22px;
+}
+
+.phones__list--row .phones__item + .phones__item::before {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -13px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  content: "";
+}
+
+.phones__link {
+  color: var(--text-color);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.phones__link:hover {
+  color: var(--main-color);
+}
+
+.phones__link:active {
+  opacity: 0.5;
+}
+
+.work-hours {
+  display: flex;
+}
+
+.work-hours::before {
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+  background-image: url("../img/schedule.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  content: "";
+}
+
+.work-hours--align-center {
+  align-items: center;
+}
+
+.work-hours__list {
+  display: flex;
+}
+
+.work-hours__list--column {
+  flex-direction: column;
+}
+
+.work-hours__line:first-child {
+  margin-right: 17px;
+}
+
+.work-hours__time {
+  font-weight: normal;
+}
+
+/* SITE-HEADER */
+
+.site-header__top {
+  padding: 10px;
+  font-weight: 500;
+  background-color: #F9F8F8;
+}
+
+.site-header__top-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 192px;
+}
+
+
+
+
+
 
 .vetinary-clinic-header {
   display: flex;
@@ -781,7 +925,7 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .our-services-slider-link::before,
-.services__content::before {
+.services__item::before {
   display: block;
   height: 77px;
   background-size: contain;
@@ -792,73 +936,73 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 .our-services-slider-item:nth-child(1) .our-services-slider-link::before,
-.services__item:nth-child(1) .services__content::before {
+.services__item:nth-child(1)::before {
   width: 54px;
   background-image: url("../img/doctor.svg");
 }
 
 .our-services-slider-item:nth-child(2) .our-services-slider-link::before,
-.services__item:nth-child(2) .services__content::before {
+.services__item:nth-child(2)::before {
   width: 61px;
   background-image: url("../img/pet-nurse.svg");
 }
 
 .our-services-slider-item:nth-child(3) .our-services-slider-link::before,
-.services__item:nth-child(3) .services__content::before {
+.services__item:nth-child(3)::before {
   width: 72px;
   background-image: url("../img/pet-ill.svg");
 }
 
 .our-services-slider-item:nth-child(4) .our-services-slider-link::before,
-.services__item:nth-child(4) .services__content::before {
+.services__item:nth-child(4)::before {
   width: 76px;
   background-image: url("../img/dermatolog.svg");
 }
 
 .our-services-slider-item:nth-child(5) .our-services-slider-link::before,
-.services__item:nth-child(5) .services__content::before {
+.services__item:nth-child(5)::before {
   width: 78px;
   background-image: url("../img/laboratory.svg");
 }
 
 .our-services-slider-item:nth-child(6) .our-services-slider-link::before,
-.services__item:nth-child(6) .services__content::before {
+.services__item:nth-child(6)::before {
   width: 76px;
   background-image: url("../img/dogs.svg");
 }
 
 .our-services-slider-item:nth-child(7) .our-services-slider-link::before,
-.services__item:nth-child(7) .services__content::before {
+.services__item:nth-child(7)::before {
   width: 77px;
   background-image: url("../img/uzi-diagnostics.svg");
 }
 
 .our-services-slider-item:nth-child(8) .our-services-slider-link::before,
-.services__item:nth-child(8) .services__content::before {
+.services__item:nth-child(8)::before {
   width: 40px;
   background-image: url("../img/injection.svg");
 }
 
 .our-services-slider-item:nth-child(9) .our-services-slider-link::before,
-.services__item:nth-child(9) .services__content::before {
+.services__item:nth-child(9)::before {
   width: 86px;
   background-image: url("../img/international-passport.svg");
 }
 
 .our-services-slider-item:nth-child(10) .our-services-slider-link::before,
-.services__item:nth-child(10) .services__content::before {
+.services__item:nth-child(10)::before {
   width: 68px;
   background-image: url("../img/vacancies.svg");
 }
 
 .our-services-slider-item:nth-child(11) .our-services-slider-link::before,
-.services__item:nth-child(11) .services__content::before {
+.services__item:nth-child(11)::before {
   width: 78px;
   background-image: url("../img/teeth-injection.svg");
 }
 
 .our-services-slider-item:nth-child(7) .our-services-slider-link::before,
-.services__item:nth-child(12) .services__content::before {
+.services__item:nth-child(12)::before {
   width: 77px;
   background-image: url("../img/med-box.svg");
 }
@@ -1570,7 +1714,7 @@ only screen and (                min-resolution: 2dppx) {
   width: 300px;
   margin-left: 29px;
   margin-bottom: 33px;
-  padding: 50px 0 45px 45px;
+  padding: 50px 22px 45px 45px;
   background-color: #fff;
   background-image: url("../img/paw-services-item.png");
   background-size: 108px 94px;
@@ -1584,10 +1728,6 @@ only screen and (                min-resolution: 2dppx) {
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.2));
 }
 
-.services__content {
-  margin-bottom: 26px;
-}
-
 .services__heading {
   font-size: 32px;
   line-height: 34px;
@@ -1597,7 +1737,8 @@ only screen and (                min-resolution: 2dppx) {
 
 .services__text {
   color: #949494;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 26px;
 }
 
 .services__learn-more-btn {
@@ -1624,14 +1765,10 @@ only screen and (                min-resolution: 2dppx) {
   background-color: #333333;
 }
 
-@media only screen and (max-width: 668px) {
+@media only screen and (max-width: 973px) {
   .services__item {
     width: 200px;
     padding: 20px;
-  }
-
-  .services__content {
-    margin-bottom: 20px;
   }
 
   .services__content::before {
@@ -1655,6 +1792,46 @@ only screen and (                min-resolution: 2dppx) {
     padding: 10px 15px;
   }
 }
+
+@media only screen and (max-width: 697px) {
+  .services__item {
+    width: 250px;
+  }
+
+  .services__heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .services__item {
+    width: 300px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .services__heading {
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .services__learn-more-btn {
+    padding: 12px 25px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .services__item {
+    width: 230px;
+    padding: 25px 15px;
+  }
+}
+
+/* ========== SERVICES OPEN PAGE ========== */
 
 /* ========== FAQ page ========== */
 
