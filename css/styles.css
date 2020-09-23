@@ -1982,3 +1982,90 @@ only screen and (                min-resolution: 2dppx) {
 .answer--process .answer__show-button {
   display: none;
 }
+
+@media only screen and (max-width: 1293px) {
+  .faq {
+    margin-bottom: 0;
+    background-size: 499px 474px, 400px auto;
+  }
+}
+
+@media only screen and (max-width: 1196px) {
+  .answer {
+    max-width: 650px;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 1096px) {
+  .faq {
+    margin-left: 70px;
+    background-size: 385px auto, 350px auto;
+  }
+}
+
+@media only screen and (max-width: 1096px) {
+  .faq {
+    background-image: url("../img/kitten-cat.png"), none;
+  }
+
+  .answer {
+    max-width: 752px;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .faq {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .faq {
+    background-size: 300px auto;
+    background-position: top 80px right;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .faq {
+    background-size: 200px auto;
+    background-position: top 175px right;
+  }
+
+  .answer__left {
+    padding-right: 80px;
+  }
+}
+
+@media only screen and (max-width: 588px) {
+  .faq {
+    background-image: none;
+  }
+
+  .faq__content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (max-width: 467px) {
+  .answer__information {
+    flex-wrap: wrap;
+  }
+
+  .answer {
+    padding-left: 20px;
+    padding-right: 60px;
+  }
+
+  .answer__left {
+    padding-right: 0;
+  }
+
+  .answer__show-button,
+  .answer--process .answer--process-span {
+    right: 20px;
+  }
+}
