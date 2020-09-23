@@ -1887,6 +1887,10 @@ only screen and (                min-resolution: 2dppx) {
   border: 1px solid #F3F3F3;
 }
 
+.answer--process {
+  opacity: 0.6;
+}
+
 .answer__left {
   padding-right: 112px;
 }
@@ -1942,22 +1946,39 @@ only screen and (                min-resolution: 2dppx) {
   display: block;
 }
 
+.answer--process .answer--process-span {
+  position: absolute;
+  z-index: 1;
+  top: 57px;
+  right: 39px;
+  width: 21px;
+  height: 21px;
+  background-image: url("../img/clock.png");
+  background-size: 21px 21px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .answer__show-button {
   position: absolute;
   z-index: 1;
-  right: 41px;
   top: 57px;
+  right: 41px;
   width: 9px;
   height: 16px;
   border: none;
   background: none;
   background-image: url("../img/arrow-left.svg");
-  background-size: 9px 16px;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: 9px 16px;
   transform: rotate(-90deg);
 }
 
 .answer--active .answer__show-button {
   transform: rotate(90deg);
+}
+
+.answer--process .answer__show-button {
+  display: none;
 }
